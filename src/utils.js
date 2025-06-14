@@ -966,7 +966,7 @@ function hitEnemy(scene, player, enemy, sceneName) {
         scene.popSound.play();
         explode(scene, enemy);
     }
-    else if (enemy.texture.key != 'acorn' && player.body.y + 10 * scene.personalScale + (player.body.height) / 2 < enemy.body.y) {
+    if (enemy.texture.key != 'acorn' && player.body.y + 10 * scene.personalScale + (player.body.height) / 2 < enemy.body.y) {
         player.setVelocityY(-800 * scene.personalScale);
         scene.jumpOverSound.play();
         if (enemy.texture.key === 'mushroom') {
@@ -1019,9 +1019,7 @@ function takeDamage(scene, player, enemy, sceneName) {
         scene.hearts[scene.lives].setTexture('emptyHeart');
         scene.player.setTint(0xffff00);
         scene.cameras.main.shake(300, 0.005);
-        if (enemy.texture.key == 'spider' || enemy.texture.key == 'snake' || enemy.texture.key == 'boar' || enemy.texture.key == 'fly'){
-            scene.isInvincible = true;
-        }
+        scene.isInvincible = true;
 
         scene.time.delayedCall(1500, () => {
             scene.player.clearTint();

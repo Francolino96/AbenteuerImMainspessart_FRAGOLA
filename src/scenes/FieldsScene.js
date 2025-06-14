@@ -62,6 +62,10 @@ class FieldsScene extends Phaser.Scene {
 
         createPlayer(this);
 
+        createWhiteMushroom(this, 2200, this.mapHeight - 450 * this.personalScale);
+        createWhiteMushroom(this, 6620, this.mapHeight - 450 * this.personalScale);
+        createWhiteMushroom(this, 7950, this.mapHeight - 850 * this.personalScale);
+
         this.strawberryNumber = 5;
         this.strawberries = createIngredients(
             this,
@@ -80,9 +84,7 @@ class FieldsScene extends Phaser.Scene {
             { min: 50, max: 300 }
         );
         spawnDecor(this, 1, true, 'grass', 0.006 * this.mapWidth, 0, this.mapWidth, gapPercentages, this.gapWidth, this.boxWidth);       
-        createWhiteMushroom(this, 2200, this.mapHeight - 450 * this.personalScale);
-        createWhiteMushroom(this, 6620, this.mapHeight - 450 * this.personalScale);
-        createWhiteMushroom(this, 7950, this.mapHeight - 850 * this.personalScale);
+        
         const excludedGaps = [];
         this.spiders = spawnGapEnemies(this, 'spider', gapPercentages, 250, 4, excludedGaps);
         createFlies(this, 4, 'fly', 2, 150);
