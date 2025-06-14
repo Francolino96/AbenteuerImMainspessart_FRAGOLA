@@ -3,6 +3,7 @@ import {
     spawnSkull,
     createIngredients,
     createAcorns,
+    createBomb,
     updateAcorns,
     spawnGapEnemies,
     updateEnemy,
@@ -76,6 +77,10 @@ class OrchardScene extends Phaser.Scene {
         );
         spawnDecor(this, 1, true, 'grass', 0.006 * this.mapWidth, 0, this.mapWidth, gapPercentages, this.gapWidth, this.boxWidth);       
         createAcorns(this, 4, 'OrchardScene');
+        createBomb(this, 1150, this.mapHeight - 830 * this.personalScale);
+        createBomb(this, 4800, this.mapHeight - 830 * this.personalScale);
+        createBomb(this, 7600, this.mapHeight - 630 * this.personalScale);
+        createBomb(this, 9600, this.mapHeight - this.boxWidth + 20 * this.personalScale);
         const excludedGaps = [];
         this.spiders = spawnGapEnemies(this, 'spider', gapPercentages, 250, 4, excludedGaps);
         initializeSceneInputs(this, 'apple', 'sugar');

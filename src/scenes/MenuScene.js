@@ -41,7 +41,7 @@ class MenuScene extends Phaser.Scene {
         }
         else {
             fontSize = 25 * this.personalScale;
-            spacing = 1.5 * this.personalScale;
+            spacing = 0.8 * this.personalScale;
         }
         for (let i = 0; i < this.missions.length; i++) {
             let text = this.add.text(this.scale.width / 2, this.scale.height * 0.25 + 10 * this.personalScale + (i+1) * spacing * 80 *this.personalScale, this.missions[i], { 
@@ -50,14 +50,10 @@ class MenuScene extends Phaser.Scene {
                 fill: '#000',
                 align: 'center',
                 padding: { left: 10, right: 10, top: 5, bottom: 5 }
-            })
-            .setOrigin(0.5)
-            .setInteractive()
-            .on('pointerdown', () => {
+            }).setOrigin(0.5).setInteractive().on('pointerdown', () => {
                 this.selectedMission = i;
                 this.updateSelection();
             });
-
             this.menuItems.push(text);
         }
 

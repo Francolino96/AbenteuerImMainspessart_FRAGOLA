@@ -60,8 +60,8 @@ class TitleScene extends Phaser.Scene {
 
         // Scegli la posizione Y in base al sistema
         const posY = isIOS 
-            ? this.scale.height - 170 * this.personalScale   // se è iOS
-            : this.scale.height - 20 * this.personalScale;   // se è Android (o altro)
+            ? this.scale.height - 180 * this.personalScale   // se è iOS
+            : this.scale.height - 30 * this.personalScale;   // se è Android (o altro)
 
         this.add.text(
             this.scale.width/2, 
