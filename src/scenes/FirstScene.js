@@ -52,7 +52,7 @@ class FirstScene extends Phaser.Scene {
 
         createPlayer(this);
 
-        this.blueberryNumber = 0;
+        this.blueberryNumber = 5;
         this.blueberries = createIngredients(
             this,
             'blueberry',
@@ -61,7 +61,7 @@ class FirstScene extends Phaser.Scene {
             { min: 50, max: 300 }
         );
 
-        this.sugarNumber = 0;
+        this.sugarNumber = 5;
         this.sugar = createIngredients(
             this,
             'sugar',
