@@ -104,7 +104,7 @@ export function createPlatforms(scene, numIterations, platformHeight, startX) {
 }
 
 export function createSounds(scene) {
-    if (scene.sceneName == 'FieldsScene'){
+    if (scene.sceneName == 'FieldsScene' || scene.sceneName == 'FirstScene'){
         scene.flySound = scene.sound.add('fly', { loop: false, volume: 1 });
         scene.spiderSound = scene.sound.add('spider', { loop: false, volume: 0.8 });
     }
@@ -115,7 +115,7 @@ export function createSounds(scene) {
     else if (scene.sceneName == 'OrchardScene'){
         scene.spiderSound = scene.sound.add('spider', { loop: false, volume: 0.8 });
     }
-    else if (scene.sceneName == 'ForestScene' || scene.sceneName == 'FirstScene'){
+    else if (scene.sceneName == 'ForestScene'){
         scene.boarSound = scene.sound.add('boar', { loop: false, volume: 0.5 });
     }
     scene.collectSound = scene.sound.add('collect', { loop: false, volume: 0.05 });
@@ -222,7 +222,7 @@ export function createPlayer(scene) {
     scene.player = scene.physics.add.sprite(100 * scene.personalScale, 400 * scene.personalScale, 'player');
     scene.cameras.main.startFollow(scene.player, true, 0.25, 0.25);
     scene.player.setScale(scene.personalScale * 1.35).refreshBody();
-    scene.player.setSize(scene.player.width * 0.70, scene.player.height);
+    scene.player.setSize(scene.player.width * 0.60, scene.player.height);
     scene.player.setBounce(0.1);
     scene.player.setCollideWorldBounds(true);
 
